@@ -1,0 +1,43 @@
+{
+    "name": "jorgeanzola/environment-protection",
+    "description": "Protects your different environments with an access password.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "environment protection"
+    ],
+    "support": {
+        "docs": "https://github.com/jorgeanzola/environment-protection/blob/master/README.md",
+        "issues": "https://github.com/jorgeanzola/environment-protection/issues"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jorge Anzola",
+            "homepage": "github.com/jorgeanzola"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "jorgeanzola\\environmentprotection\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Environment protection",
+        "handle": "environment-protection",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/jorgeanzola/environment-protection/master/CHANGELOG.md",
+        "components": {
+            "protector": "jorgeanzola\\environmentprotection\\services\\Protector"
+        },
+        "class": "jorgeanzola\\environmentprotection\\EnvironmentProtection"
+    }
+}
