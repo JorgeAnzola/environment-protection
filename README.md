@@ -43,6 +43,6 @@ if the file contains `redirectUrl`, this will be used instead of the template.
 
 Some things to do, and ideas for potential features:
 
-* Release it
+* Add cookie when accessing with password.
 
 Brought to you by [Jorge Anzola](github.com/jorgeanzola)
