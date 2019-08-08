@@ -2,7 +2,7 @@
     "name": "jorgeanzola/environment-protection",
     "description": "Protects your different environments with an access password.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",

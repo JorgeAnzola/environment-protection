@@ -62,7 +62,9 @@ class EnvironmentProtection extends Plugin
 
         $settings = $this->getSettings();
 
-        if ($settings->protected) {
+        $isConsoleRequest = Craft::$app->getRequest()->getIsConsoleRequest();
+
+        if ($isConsoleRequest && $settings->protected) {
         	if (! $this->protector->canIAccess()) {
 				if ($redirectUrl = $settings->redirectUrl) {
 					header('Location: ' . $redirectUrl, true, 302);
