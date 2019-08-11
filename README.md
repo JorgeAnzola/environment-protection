@@ -32,6 +32,7 @@ if the file contains `redirectUrl`, this will be used instead of the template.
 'protected' => true,
 'redirectUrl' => 'https://your-production-website.com/',
 'accessPassword' => env('ACCESS_PASSWORD'),
+'cookieDuration' => 86400,
 'template' => 'protected.twig',
 'ipWhitelist' => [
 	'::1',
@@ -42,7 +43,5 @@ if the file contains `redirectUrl`, this will be used instead of the template.
 ## Environment protection Roadmap
 
 Some things to do, and ideas for potential features:
-
-* Add cookie when accessing with password.
 
 Brought to you by [Jorge Anzola](github.com/jorgeanzola)

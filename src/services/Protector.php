@@ -10,6 +10,7 @@
 
 namespace jorgeanzola\environmentprotection\services;
 
+use yii\web\Cookie;
 use jorgeanzola\environmentprotection\EnvironmentProtection;
 
 use Craft;
@@ -19,9 +20,14 @@ use craft\base\Component;
  * @author    Jorge Anzola
  * @package   EnvironmentProtection
  * @since     1.0.0
+ *
+ * @property string $myIp
+ * @property mixed $settings
+ * @property array $ipWhitelist
  */
 class Protector extends Component
 {
+    protected $cookieName = 'can_i_access';
     // Public Methods
     // =========================================================================
 
@@ -30,7 +36,27 @@ class Protector extends Component
      */
     public function canIAccess(): bool
     {
-    	return ($this->doIHaveACorrectAccessPassword() || $this->isMyIpWhitelisted());
+    	return ($this->doIHaveACorrectAccessPassword() || $this->isMyIpWhitelisted() || $this->doIHaveACookie());
+    }
+
+    public function saveMyCookie()
+    {
+        $cookie = new Cookie();
+
+        $cookie->name = $this->cookieName;
+
+        $cookie->value = true;
+
+        $cookie->expire = time() + $this->getSettings()->cookieDuration;
+
+        return Craft::$app->getResponse()->getCookies()->add($cookie);
+    }
+
+    protected function doIHaveACookie()
+    {
+        $cookie = Craft::$app->getRequest()->getCookies()->get($this->cookieName);
+
+        return ($cookie && $cookie->value === true);
     }
 
 	protected function isMyIpWhitelisted(): bool

@@ -50,6 +50,11 @@ class Settings extends Model
      */
     public $ipWhitelist;
 
+    /**
+     * @var integer
+     */
+    public $cookieDuration = 86400;
+
     // Public Methods
     // =========================================================================
 
@@ -62,7 +67,8 @@ class Settings extends Model
             [['protected'], 'bool'],
             [['redirectUrl', 'accessPassword', 'template'], 'string'],
             [['ipWhitelist'], 'array'],
-			[['protected', 'accessPassword', 'ipWhitelis'], 'required']
+			[['protected', 'accessPassword', 'ipWhitelis'], 'required'],
+            [['cookieDuration'], 'integer'],
         ];
     }
 }

@@ -79,12 +79,17 @@ class EnvironmentProtection extends Plugin
 					Craft::$app->end();
 
 				} else {
-					Craft::t(
+
+					$message = Craft::t(
 						'environment-protection',
 						'This website is protected.'
 					);
+
+					exit($message);
 				}
 			}
+
+        	return $this->protector->saveMyCookie();
 		}
 
         Craft::info(
