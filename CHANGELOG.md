@@ -1,5 +1,8 @@
 # Environment protection Changelog
 
+## 1.1.1 - 2020-11-01
+- Fixed composer compatibility version ([#3](https://github.com/JorgeAnzola/environment-protection/issues/3))
+
 ## 1.1.0 - 2019-08-11
 ### Added
 - Added cookie to allow visitors that enter a password or were in the whitelist. ([#2](https://github.com/JorgeAnzola/environment-protection/issues/2)) 
