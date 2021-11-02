@@ -1,5 +1,8 @@
 # Environment protection Changelog
 
+## 1.1.4 - 2021-11-02
+- Do not protect CP requests
+
 ## 1.1.1 - 2020-11-01
 - Fixed composer compatibility version ([#3](https://github.com/JorgeAnzola/environment-protection/issues/3))
 
