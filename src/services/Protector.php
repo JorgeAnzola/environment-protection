@@ -36,7 +36,7 @@ class Protector extends Component
      */
     public function canIAccess(): bool
     {
-    	return ($this->doIHaveACorrectAccessPassword() || $this->isMyIpWhitelisted() || $this->doIHaveACookie());
+    	return ($this->doIHaveACorrectAccessPassword() || $this->isMyIpWhitelisted() || $this->doIHaveACookie() || Craft::$app->getRequest()->getIsCpRequest());
     }
 
     public function saveMyCookie()
