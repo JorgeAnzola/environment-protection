@@ -1,5 +1,9 @@
 # Environment protection Changelog
 
+## 1.2
+- Admin users can access the protected website
+- Changed default cookie duration
+
 ## 1.1.4 - 2021-11-02
 - Do not protect CP requests
 

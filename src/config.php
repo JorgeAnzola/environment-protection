@@ -28,7 +28,7 @@ return [
 	// 'redirectUrl' => 'https://your-production-website.com/',
 	'accessPassword' => env('ACCESS_PASSWORD'),
 	'template' => 'protected.twig',
-    'cookieDuration' => 86400,
+    'cookieDuration' => 3600,
 	'ipWhitelist' => [
 		'::1',
 		'127.0.0.1'

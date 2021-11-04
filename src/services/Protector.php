@@ -36,7 +36,7 @@ class Protector extends Component
      */
     public function canIAccess(): bool
     {
-    	return ($this->doIHaveACorrectAccessPassword() || $this->isMyIpWhitelisted() || $this->doIHaveACookie() || Craft::$app->getRequest()->getIsCpRequest());
+    	return (Craft::$app->getUser()->getIsAdmin() || $this->doIHaveACorrectAccessPassword() || $this->isMyIpWhitelisted() || $this->doIHaveACookie() || Craft::$app->getRequest()->getIsCpRequest());
     }
 
     public function saveMyCookie()
@@ -69,7 +69,7 @@ class Protector extends Component
 		if (($givenAccessPassword = Craft::$app->getRequest()->get('access_password')) && ($accessPassword = $this->getSettings()->accessPassword)) {
 			return  ($accessPassword && $givenAccessPassword && $accessPassword == $givenAccessPassword);
 		}
-		
+
 		return false;
     }
 
